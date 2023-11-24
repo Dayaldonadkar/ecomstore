@@ -1,9 +1,10 @@
 import React from "react";
+import About from "../Components/About";
 
 const Home = () => {
   return (
-    <div className="flex justify-center">
-      <div className="w-[90%]">Home</div>
+    <div>
+      <About />
     </div>
   );
 };
