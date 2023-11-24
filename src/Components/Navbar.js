@@ -10,12 +10,12 @@ const Navbar = () => {
   };
 
   return (
-    <main>
-      <section>
-        <div className="flex justify-between items-center px-5 lg:px-20 py-4 relative">
-          <h1 className="text-4xl">
-            <span>DAYAL</span>
-            <span>STORE</span>
+    <main className="flex justify-center">
+      <section className="flex justify-between w-[90%] sm:w-[92%] items-center space-x- sm:spce-x-0">
+        <div className="flex justify-between items-center sm:px-0 sm:w-[80%] lg:w-[85%] py-4 relative">
+          <h1 className="text-3xl font-semibold border-2 border-black py-2 px-1">
+            <span className="bg-[#5271FF] text-white  px-2 py-1">DAYAL</span>
+            <span className="pl-2">STORE</span>
           </h1>
           <div className="hidden md:block">
             <div className="flex space-x-6 lg:space-x-10 items-center">
@@ -27,17 +27,17 @@ const Navbar = () => {
               </ul>
             </div>
           </div>
-          <div onClick={toggleHam} className="md:hidden">
-            {hamburger ? <DensityMediumIcon /> : <CloseIcon />}
-          </div>
         </div>
+
         <div className="md:hidden">
           {!hamburger && (
             <div className="absolute top-0 left-0 bg-white w-[80%] py-10 pl-10 flex flex-col justify-between z-20">
               <div className="flex justify-between items-center ">
-                <h1>
-                  <span className="bg-blue-300">DAYAL</span>
-                  <span>STORE</span>
+                <h1 className="text-3xl font-semibold border-2 border-black py-2 px-1">
+                  <span className="bg-[#5271FF] text-white  px-2 py-1">
+                    DAYAL
+                  </span>
+                  <span className="pl-2">STORE</span>
                 </h1>
                 <div onClick={() => toggleHam(false)}>
                   <CloseIcon />
@@ -56,6 +56,9 @@ const Navbar = () => {
               </div>
             </div>
           )}
+        </div>
+        <div onClick={toggleHam} className="md:hidden">
+          {hamburger ? <DensityMediumIcon /> : <CloseIcon />}
         </div>
       </section>
     </main>
