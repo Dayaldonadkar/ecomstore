@@ -25,7 +25,7 @@ const Delivery = () => {
           </div>
         </div>
 
-        <div className="hidden lg:block w-[30%] space-y-8 xl:space-y-20 py-5">
+        <div className="hidden lg:block w-[30%] 2xl:w-[35%] space-y-8 xl:space-y-20 py-5">
           <div className=" rounded-xl  bg-[#F6F8FA]">
             <div className="flex items-center space-x-2 pl-3 py-5 xl:py-7">
               <div className="bg-white px-2 py-2 rounded-full">
