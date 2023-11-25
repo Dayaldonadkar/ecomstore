@@ -31,7 +31,7 @@ const Navbar = () => {
 
         <div className="md:hidden">
           {!hamburger && (
-            <div className="absolute top-0 left-0 bg-white w-[80%] py-10 pl-10 flex flex-col justify-between z-20">
+            <div className="absolute top-0 left-0 bg-white w-[80%] h-full py-10 pl-10 flex flex-col justify-between z-20">
               <div className="flex justify-between items-center ">
                 <h1 className="text-3xl font-semibold border-2 border-black py-2 px-1">
                   <span className="bg-[#5271FF] text-white  px-2 py-1">

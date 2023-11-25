@@ -12,12 +12,12 @@ const Trust = () => {
         <h1 className="flex justify-center text-xl font-medium pb-5">
           Trusted by 1000+ Companies
         </h1>
-        <div className="grid grid-cols-2 sm:grid-cols-5 place-content-end place-items-center">
-          <img className="w-[80%] lg:w-[60%]" src={logo1} alt="" />
-          <img className="w-[80%] lg:w-[60%]" src={logo2} alt="" />
+        <div className="grid grid-cols-2 sm:grid-cols-5 place-items-center">
+          <img className="w-[80%] lg:w-[60%]" src={logo1} alt="" />{" "}
           <img className="w-[80%] lg:w-[60%]" src={logo3} alt="" />
-          <img className="w-[80%] lg:w-[60%]" src={logo4} alt="" />
           <img className="w-[80%] lg:w-[60%]" src={logo5} alt="" />
+          <img className="w-[80%] lg:w-[60%]" src={logo2} alt="" />
+          <img className="w-[80%] lg:w-[60%]" src={logo4} alt="" />
         </div>
       </div>
     </div>

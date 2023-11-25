@@ -6,6 +6,7 @@ import Contact from "./Pages/Contact";
 import Products from "./Pages/Products";
 import Login from "./Pages/Login";
 import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </div>
   );
 };
