@@ -5,7 +5,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Footer = () => {
   return (
-    <div className="bg-[#0A1436] py-5 flex justify-center">
+    <div className="bg-[#0A1436] lg:py-14 flex justify-center">
       <div className="w-[90%] xl:w-[80%] lg:flex justify-between text-white">
         <div className=" space-y-3 lg:w-[22%]">
           <h1 className="text-white text-lg">Dayal Store</h1>

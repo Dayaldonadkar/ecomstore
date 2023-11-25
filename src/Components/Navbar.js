@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import CloseIcon from "@mui/icons-material/Close";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [hamburger, setHamburger] = useState(true);
@@ -20,10 +21,20 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="flex space-x-6 lg:space-x-10 items-center">
               <ul className="flex space-x-5  lg:space-x-7 text-sm">
-                <li>Home</li>
-                <li>About</li>
-                <li>Products</li>
-                <li>Contact</li>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+
+                <li>
+                  <Link to="/about">About</Link>
+                </li>
+
+                <li>
+                  <Link to="/products">Products</Link>
+                </li>
+                <li>
+                  <Link to="/contact">Contacts</Link>
+                </li>
               </ul>
             </div>
           </div>
