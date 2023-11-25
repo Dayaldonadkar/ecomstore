@@ -5,7 +5,7 @@ import Card from "./Card";
 
 const SecondPart = () => {
   return (
-    <div>
+    <div className="my-5 sm:my-8">
       <div className="flex justify-between">
         <div className="flex">
           <GridViewIcon />
@@ -22,7 +22,12 @@ const SecondPart = () => {
         </div>
       </div>
 
-      <div className="py-5">
+      <div className="py-5 sm:grid sm:grid-cols-2 lg:grid-cols-3">
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
         <Card />
         <Card />
         <Card />

@@ -4,8 +4,8 @@ import SecondPart from "../Components/SecondPart";
 
 const Products = () => {
   return (
-    <div className="flex justify-center">
-      <div className="w-[90%]">
+    <div className="flex justify-center ">
+      <div className="w-[90%] sm:flex">
         <FirstPart />
         <SecondPart />
       </div>

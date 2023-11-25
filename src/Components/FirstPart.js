@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 
 const FirstPart = () => {
   return (
-    <div className="my-10">
+    <div className="my-8">
       <div className="">
         <input
           type="text"
