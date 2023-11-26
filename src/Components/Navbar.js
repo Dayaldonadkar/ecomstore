@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
+import { useGlobalContext } from "../context/Context";
 
 const Navbar = () => {
   const [hamburger, setHamburger] = useState(true);
+  const data = useGlobalContext();
+  console.log(data, "data");
 
   const toggleHam = () => {
     setHamburger(!hamburger);
@@ -15,7 +18,9 @@ const Navbar = () => {
       <section className="flex justify-between w-[90%] sm:w-[92%] items-center space-x- sm:spce-x-0">
         <div className="flex justify-between items-center sm:px-0 sm:w-[80%] lg:w-[85%] py-4 relative">
           <h1 className="text-3xl font-semibold border-2 border-black py-2 px-1">
-            <span className="bg-[#5271FF] text-white  px-2 py-1">DAYAL</span>
+            <span className="bg-[#5271FF] text-white  px-2 py-1">
+              {data.name}
+            </span>
             <span className="pl-2">STORE</span>
           </h1>
           <div className="hidden md:block">
