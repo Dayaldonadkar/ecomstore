@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center sm:px-0 sm:w-[80%] lg:w-[85%] py-4 relative">
           <h1 className="text-3xl font-semibold border-2 border-black py-2 px-1">
             <span className="bg-[#5271FF] text-white  px-2 py-1">
-              {data.name}
+              {/* {data.name} */}Dayal
             </span>
             <span className="pl-2">STORE</span>
           </h1>
