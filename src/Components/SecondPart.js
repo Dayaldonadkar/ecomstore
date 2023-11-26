@@ -28,7 +28,7 @@ const SecondPart = () => {
       <div className="py-5 sm:grid sm:grid-cols-2 lg:grid-cols-3">
         {products.map((currElem) => {
           return (
-            <div>
+            <div className="py-2">
               <Card {...currElem} />
             </div>
           );
