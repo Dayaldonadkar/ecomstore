@@ -15,7 +15,8 @@ const SinglePage = () => {
 
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
-  }, []);
+  }, [`${API}?id=${id}`]);
+
   return (
     <div className="flex justify-center">
       <Myimage image={image} />

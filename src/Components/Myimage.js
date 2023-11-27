@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Myimage = ({ image }) => {
+const Myimage = ({ image = [{ url: "" }] }) => {
+  const [img, setImg] = useState([0]);
+  const handleImageChange = (e) => {
+    setImg(e);
+    console.log(e);
+  };
   console.log(image, "image2");
   return (
     <div>
@@ -8,11 +13,20 @@ const Myimage = ({ image }) => {
         {image.map((currEl, index) => {
           console.log(currEl.url, "lksa");
           return (
-            <div key={index}>
-              <img src={currEl.url} alt="currEl.url" />
+            <div className="">
+              <div key={index}>
+                <img
+                  onClick={() => handleImageChange(index)}
+                  src={currEl.url}
+                  alt="currEl.url"
+                />
+              </div>
             </div>
           );
         })}
+      </div>
+      <div>
+        <img src={image[img].url} alt="" />
       </div>
     </div>
   );
