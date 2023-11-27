@@ -3,10 +3,12 @@ import GridViewIcon from "@mui/icons-material/GridView";
 import ViewListIcon from "@mui/icons-material/ViewList";
 import Card from "./Card";
 import { useGlobalContext } from "../context/Context";
+import { Link } from "react-router-dom";
 
 const SecondPart = () => {
-  const { products } = useGlobalContext();
+  const { products, isLoading } = useGlobalContext();
   console.log("pro", products);
+
   return (
     <div className="my-5 sm:my-8">
       <div className="flex justify-between">
@@ -25,11 +27,14 @@ const SecondPart = () => {
         </div>
       </div>
 
-      <div className="py-5 sm:grid sm:grid-cols-2 lg:grid-cols-3">
+      <div className="py-5 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4">
         {products.map((currElem) => {
+          const { id } = currElem;
           return (
             <div className="py-2">
-              <Card {...currElem} />
+              <Link to={`/singlepage/${id}`}>
+                <Card {...currElem} />
+              </Link>
             </div>
           );
         })}

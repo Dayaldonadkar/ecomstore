@@ -7,6 +7,7 @@ import Products from "./Pages/Products";
 import Login from "./Pages/Login";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import SinglePage from "./Pages/SinglePage";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<Products />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/singlepage/:id" element={<SinglePage />} />
         </Routes>
       </BrowserRouter>
       <Footer />
