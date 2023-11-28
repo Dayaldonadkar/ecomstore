@@ -7,6 +7,9 @@ import PublishedWithChangesIcon from "@mui/icons-material/PublishedWithChanges";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import StarIcon from "@mui/icons-material/Star";
+import StarHalfIcon from "@mui/icons-material/StarHalf";
+import Starrating from "../Components/Starrating";
 
 const API = "https://api.pujakaitem.com/api/products";
 
@@ -47,8 +50,10 @@ const SinglePage = () => {
         <div className="py-5 space-y-2">
           <h6 className="text-2xl">{name}</h6>
           <p className="space-x-2">
-            <span>{stars}</span>
-            <span> {reviews} customer reviews)</span>
+            <span>
+              <Starrating rating={stars} />
+            </span>
+            <span>({reviews} customer reviews)</span>
           </p>
           <p className="">
             <span>MRP : </span>
@@ -115,7 +120,7 @@ const SinglePage = () => {
               <p className="">
                 {stock <= 10 ? <span>Only</span> : ""} {stock} {category} left
               </p>
-              {stock === 4 ? (
+              {stock > 3 ? (
                 <p className="text-red-800"> Max quantity reached</p>
               ) : (
                 ""
