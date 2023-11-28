@@ -7,7 +7,7 @@ import { useGlobalContext } from "../context/Context";
 const Navbar = () => {
   const [hamburger, setHamburger] = useState(true);
   const data = useGlobalContext();
-  console.log(data, "data");
+  // console.log(data, "data");
 
   const toggleHam = () => {
     setHamburger(!hamburger);

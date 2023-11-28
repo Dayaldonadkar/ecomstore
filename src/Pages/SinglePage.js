@@ -7,14 +7,15 @@ import PublishedWithChangesIcon from "@mui/icons-material/PublishedWithChanges";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { button } from "@material-tailwind/react";
 const API = "https://api.pujakaitem.com/api/products";
 
 const SinglePage = () => {
-  const { getSingleProduct, singleProduct } = useGlobalContext();
+  const { getSingleProduct, singleProduct, formattedPrice } =
+    useGlobalContext();
   const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
 
-  console.log(singleProduct, "single");
   const {
     name,
     image,
@@ -26,7 +27,13 @@ const SinglePage = () => {
     reviews,
     stars,
   } = singleProduct;
-  console.log(image, "image");
+
+  const handleAdd = () => {
+    console.log(stock, "stock");
+    setQuantity(quantity + 1);
+  };
+
+  //   console.log(stock, "stock");
 
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
@@ -41,31 +48,35 @@ const SinglePage = () => {
           <h6 className="text-2xl">{name}</h6>
           <p className="space-x-2">
             <span>{stars}</span>
-            <span> ({reviews} customer reviews)</span>
+            <span> {reviews} customer reviews)</span>
           </p>
           <p className="">
             <span>MRP : </span>
-            <span className="line-through">{(price * 3) / 2}</span>
+            <span className="line-through">
+              {formattedPrice((price * 3) / 2)}
+            </span>
           </p>
           <p>
-            <span className="text-[#6154F3]">Deal of the day : {price}</span>
+            <span className="text-[#6154F3]">
+              Deal of the day : {formattedPrice(price)}
+            </span>
           </p>
           <p className="text-sm font-light">{description}</p>
 
           <div className="flex text-sm justify-between items-center py-5">
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center space-y-2">
               <LocalShippingIcon />
               <p>Free Delivery</p>
             </div>
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center space-y-2">
               <PublishedWithChangesIcon />
               <p>30 Days replacement</p>
             </div>
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center space-y-2">
               <LocalShippingIcon />
               <p>Dayal Delivered</p>
             </div>
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center text-center space-y-2">
               <WorkspacePremiumIcon />
               <p>2 year Warranty</p>
             </div>
@@ -74,18 +85,33 @@ const SinglePage = () => {
           <p>Brand : {company}</p>
           <div>
             <div className="flex items-center space-x-2">
-              <button>
-                <RemoveIcon />
-              </button>
+              {quantity === 1 ? (
+                <button>
+                  <RemoveIcon />
+                </button>
+              ) : (
+                <button onClick={() => setQuantity(quantity - 1)}>
+                  <RemoveIcon />
+                </button>
+              )}
+
               <p className="text-xl">{quantity}</p>
 
-              <button onClick={() => setQuantity(quantity + 1)}>
-                <AddIcon />
-              </button>
+              {stock > quantity ? (
+                <button onClick={() => handleAdd()}>
+                  <AddIcon />
+                </button>
+              ) : (
+                <button>
+                  <AddIcon />
+                </button>
+              )}
             </div>
             <button className="bg-[#6154F3] text-white text-lg px-5 py-2 rounded-lg">
               Add to cart
             </button>
+
+            <p>{stock}</p>
           </div>
         </div>
       </div>

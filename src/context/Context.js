@@ -22,11 +22,11 @@ const Approvider = ({ children }) => {
     dispatch({ type: "SET_LOADING" });
     try {
       const res = await axios.get(API);
-      console.log(res);
+      // console.log(res);
       const products = await res.data;
       dispatch({ type: "SET_API_DATA", payload: products });
 
-      console.log("products", products);
+      // console.log("products", products);
     } catch (error) {
       dispatch({ type: "API_ERROR" });
       console.log(error);
@@ -52,7 +52,15 @@ const Approvider = ({ children }) => {
   //   } catch (error) {
   //     dispatch({ type: "SET_SINGLE_ERROR" });
   //   }
+
   // };
+
+  const formattedPrice = (price) =>
+    Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
+      maximumFractionDigits: 0,
+    }).format(price);
 
   useEffect(() => {
     getProducts();
@@ -60,7 +68,9 @@ const Approvider = ({ children }) => {
 
   return (
     <div>
-      <AppContext.Provider value={{ ...state, getSingleProduct }}>
+      <AppContext.Provider
+        value={{ ...state, getSingleProduct, formattedPrice }}
+      >
         {children}
       </AppContext.Provider>
     </div>
