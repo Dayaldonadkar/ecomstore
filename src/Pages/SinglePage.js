@@ -7,7 +7,7 @@ import PublishedWithChangesIcon from "@mui/icons-material/PublishedWithChanges";
 import WorkspacePremiumIcon from "@mui/icons-material/WorkspacePremium";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { button } from "@material-tailwind/react";
+
 const API = "https://api.pujakaitem.com/api/products";
 
 const SinglePage = () => {
@@ -97,7 +97,7 @@ const SinglePage = () => {
 
               <p className="text-xl">{quantity}</p>
 
-              {stock > quantity ? (
+              {stock > quantity && quantity < 4 ? (
                 <button onClick={() => handleAdd()}>
                   <AddIcon />
                 </button>
@@ -111,7 +111,16 @@ const SinglePage = () => {
               Add to cart
             </button>
 
-            <p>{stock}</p>
+            <div className="pt-5 h-20 space-y-2">
+              <p className="">
+                {stock <= 10 ? <span>Only</span> : ""} {stock} {category} left
+              </p>
+              {stock === 4 ? (
+                <p className="text-red-800"> Max quantity reached</p>
+              ) : (
+                ""
+              )}
+            </div>
           </div>
         </div>
       </div>
