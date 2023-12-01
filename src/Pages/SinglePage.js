@@ -44,17 +44,17 @@ const SinglePage = () => {
 
   return (
     <div className="flex justify-center py-10">
-      <div className="w-[90%]">
+      <div className="w-[90%] 2xl:w-[80%] lg:flex xl:items-start  lg:justify-between">
         <Myimage image={image} />
 
-        <div className="py-5 space-y-2">
-          <h6 className="text-2xl">{name}</h6>
-          <p className="space-x-2">
-            <span>
+        <div className="py-5 lg:py-0 space-y-2 lg:w-[50%] xl:w-[40%] 2xl:w-[45%] ">
+          <h6 className="text-2xl capitalize">{name}</h6>
+          <div className="space-x-2 ">
+            <p>
               <Starrating rating={stars} />
-            </span>
-            <span>({reviews} customer reviews)</span>
-          </p>
+            </p>
+            <p className="pt-1">({reviews} customer reviews)</p>
+          </div>
           <p className="">
             <span>MRP : </span>
             <span className="line-through">
@@ -66,7 +66,7 @@ const SinglePage = () => {
               Deal of the day : {formattedPrice(price)}
             </span>
           </p>
-          <p className="text-sm font-light">{description}</p>
+          <p className="text-sm font-light 2xl:w-[90%]">{description}</p>
 
           <div className="flex text-sm justify-between items-center py-5">
             <div className="flex flex-col items-center text-center space-y-2">
@@ -87,7 +87,7 @@ const SinglePage = () => {
             </div>
           </div>
           <p>Available : {stock > 0 ? "In stock" : "Out of stock"}</p>
-          <p>Brand : {company}</p>
+          <p className="capitalize">Brand : {company}</p>
           <div>
             <div className="flex items-center space-x-2">
               {quantity === 1 ? (
@@ -120,7 +120,7 @@ const SinglePage = () => {
               <p className="">
                 {stock <= 10 ? <span>Only</span> : ""} {stock} {category} left
               </p>
-              {stock > 3 ? (
+              {quantity === 4 ? (
                 <p className="text-red-800"> Max quantity reached</p>
               ) : (
                 ""

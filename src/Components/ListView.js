@@ -16,7 +16,7 @@ const ListView = ({ name, price, image, description, id }) => {
           </p>
           <p className="font-light line-clamp-3 text-sm">{description}</p>
           <Link to={`/singlepage/${id}`}>
-            <button className="text-[#513BEE] font-thin px-4 py-[6px] rounded-md border border-[#513BEE] mt-3">
+            <button className="text-[#513BEE] font-thin px-4 py-[8px] rounded-md border border-[#513BEE] mt-3">
               Read More
             </button>
           </Link>

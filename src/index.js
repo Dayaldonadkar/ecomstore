@@ -4,12 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Approvider } from "./context/Context";
+import { FilterContextProvider } from "./context/FilterContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Approvider>
-      <App />
+      <FilterContextProvider>
+        <App />
+      </FilterContextProvider>
     </Approvider>
   </React.StrictMode>
 );

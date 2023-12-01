@@ -7,9 +7,9 @@ import logo5 from "../React App_files/image8.png";
 
 const Trust = () => {
   return (
-    <div className="flex justify-center bg-[#F6F8FA] py-16">
-      <div className="w-[90%]">
-        <h1 className="flex justify-center text-xl font-medium pb-5">
+    <div className="flex justify-center py-16">
+      <div className="w-[90%] xl2:w-[80%]  bg-[#F6F8FA]">
+        <h1 className="flex justify-center text-xl font-medium pb-5 py-5">
           Trusted by 1000+ Companies
         </h1>
         <div className="grid grid-cols-2 sm:grid-cols-5 place-items-center">

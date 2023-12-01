@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import FirstPart from "../Components/FirstPart";
 import SecondPart from "../Components/SecondPart";
 import { Slider } from "@material-tailwind/react";
@@ -8,10 +8,20 @@ import Card from "../Components/Card";
 import { useGlobalContext } from "../context/Context";
 import { Link } from "react-router-dom";
 import ListView from "../Components/ListView";
+import {
+  FilterContext,
+  FilterContextProvider,
+  useFilterContext,
+} from "../context/FilterContext";
 
 const Products = () => {
-  const { products, isLoading } = useGlobalContext();
-  const [grid, setGrid] = useState(false);
+  const { products } = useGlobalContext();
+  // console.log("prod", products);
+
+  const { filter_products, sorting } = useFilterContext();
+  // console.log(filter_products, "filter");
+
+  const [grid, setGrid] = useState(true);
   return (
     <div className="flex justify-center ">
       <div className="w-[90%] sm:flex">
@@ -73,14 +83,18 @@ const Products = () => {
                 <ViewListIcon />
               </div>
             </div>
-            <p className="font-light">12 Products Available</p>
-            <div className="text-sm font-light border border-black">
-              <select label="Select Version">
-                <option>Price(lowest)</option>
-                <option>Price(highest)</option>
-                <option>Price(a-z)</option>
-                <option>Price(z-a)</option>
-              </select>
+            <p className="font-light">{products.length} Products Available</p>
+            <div className="text-sm font-light ">
+              <form action="#">
+                <label htmlFor="sort">
+                  <select name="sort" id="sort" onClick={sorting}>
+                    <option value="lowest">lowest</option>
+                    <option value="highest">highest</option>
+                    <option value="a-z">Price(a-z)</option>
+                    <option value="z-a">Price(z-a)</option>
+                  </select>
+                </label>
+              </form>
             </div>
           </div>
           {grid && (

@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <main className="flex justify-center">
-      <section className="flex justify-between w-[90%] sm:w-[92%] items-center space-x- sm:spce-x-0">
+      <section className="flex justify-between w-[90%] sm:w-[92%] 2xl:w-[80%] items-center space-x- sm:spce-x-0">
         <div className="flex justify-between items-center sm:px-0 sm:w-[80%] lg:w-[85%] py-4 relative">
           <h1 className="text-3xl font-semibold border-2 border-black py-2 px-1">
             <span className="bg-[#5271FF] text-white  px-2 py-1">

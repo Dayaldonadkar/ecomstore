@@ -4,7 +4,7 @@ import family from "../React App_files/hero.jpg";
 const About = () => {
   return (
     <div className="flex justify-center my-7">
-      <div className="w-[90%] md:flex md:justify-between items-center">
+      <div className="w-[90%] xl2:w-[80%] md:flex md:justify-between items-center">
         <div className="md:w-[50%] md:space-y-2">
           <div>
             <h3 className="text-[#513BEE] lg:text-lg xl:text-xl 2xl:text-2xl">

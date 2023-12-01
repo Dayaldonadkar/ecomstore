@@ -7,7 +7,7 @@ import ShieldIcon from "@mui/icons-material/Shield";
 const Delivery = () => {
   return (
     <div className="flex justify-center  py-5 my-10">
-      <div className="w-[90%] space-y-5 lg:space-y-0 lg:flex lg:justify-between">
+      <div className="w-[90%] xl2:w-[80%] space-y-5 lg:space-y-0 lg:flex lg:justify-between">
         <div className="space-y-5 sm:space-y-0 sm:flex sm:justify-between lg:w-[30%] xl:w-[]">
           <div className="flex lg:flex-col lg:justify-center items-center space-x-2 lg:space-x-0 lg:space-y-2 bg-[#F6F8FA] sm:w-[50%] lg:w-[100%] py-3 px-3 rounded-xl">
             <div className="bg-white px-2 py-2 rounded-full">
