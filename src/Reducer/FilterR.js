@@ -25,14 +25,35 @@ const filterR = (state, action) => {
     case "GET_SORT_VALUE": {
       let userSortValue = document.getElementById("sort");
       //   console.log(userSortValue, "userSort");
-      let sortValue = userSortValue.options[userSortValue.selectedIndex].value;
-      console.log(sortValue, "sortvalue");
+      let sort_value = userSortValue.options[userSortValue.selectedIndex].value;
+      console.log(sort_value, "sortvalue");
 
       return {
         ...state,
-        sorting_value: sortValue,
+        sorting_value: sort_value,
       };
     }
+
+    case "SORTING_PRODUCTS":
+      let newSortData;
+      let tempSortData = [...action.payload];
+
+      if (state.sorting_value === "a-z") {
+        newSortData = tempSortData.sort((a, b) => {
+          return a.name.localeCompare(b.name);
+        });
+      }
+
+      if (state.sorting_value === "z-a") {
+        newSortData = tempSortData.sort((a, b) => {
+          return b.name.localeCompare(a.name);
+        });
+      }
+
+      return {
+        ...state,
+        filter_products: newSortData,
+      };
 
     default:
       return state;

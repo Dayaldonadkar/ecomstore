@@ -1,27 +1,8 @@
-import React, { useContext, useState } from "react";
-import FirstPart from "../Components/FirstPart";
-import SecondPart from "../Components/SecondPart";
+import React from "react";
 import { Slider } from "@material-tailwind/react";
-
-import Card from "../Components/Card";
-import { useGlobalContext } from "../context/Context";
-import { Link } from "react-router-dom";
-import ListView from "../Components/ListView";
-import {
-  FilterContext,
-  FilterContextProvider,
-  useFilterContext,
-} from "../context/FilterContext";
 import Sort from "../Components/Sort";
 
 const Products = () => {
-  const { products } = useGlobalContext();
-  // console.log("prod", products);
-
-  const { filter_products, sorting } = useFilterContext();
-  // console.log(filter_products, "filter");
-
-  const [grid, setGrid] = useState(true);
   return (
     <div className="flex justify-center ">
       <div className="w-[90%] sm:flex">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useFilterContext } from "../context/FilterContext";
 import GridViewIcon from "@mui/icons-material/GridView";
 import ViewListIcon from "@mui/icons-material/ViewList";
@@ -10,7 +10,7 @@ const Sort = () => {
   const { filter_products, sorting, gridView, setGridView, setListView } =
     useFilterContext();
   // console.log(filter_products, "filter");
-  console.log(gridView, "grid");
+  // console.log(gridView, "grid");
 
   return (
     <div>
@@ -27,15 +27,19 @@ const Sort = () => {
           <p className="font-light">
             {filter_products.length} Products Available
           </p>
-          <div className="text-sm font-light ">
+          <div>
             <form action="#">
-              <label htmlFor="sort"></label>
-              <select name="sort" id="sort" onClick={sorting}>
-                <option value="lowest">lowest</option>
-                <option value="highest">highest</option>
-                <option value="a-z">Price(a-z)</option>
-                <option value="z-a">Price(z-a)</option>
-              </select>
+              <label onChange={sorting} htmlFor="sort">
+                <select name="sort" id="sort" className="">
+                  <option value="lowest">Price(lowest)</option>
+                  <option value="#" disabled></option>
+                  <option value="highest">Price(highest)</option>
+                  <option value="#" disabled></option>
+                  <option value="a-z">Price(a-z)</option>
+                  <option value="#" disabled></option>
+                  <option value="z-a">Price(z-a)</option>
+                </select>
+              </label>
             </form>
           </div>
         </div>
