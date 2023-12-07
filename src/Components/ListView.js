@@ -10,7 +10,7 @@ const ListView = ({ name, price, image, description, id }) => {
       <div className="bg-white flex flex-col border-2 w-[90%] px-5 py-3">
         <img className="w-96 h-44" src={image} alt="" />
         <div className="flex flex-col space-y-1 pt-4">
-          <p>{name}</p>
+          <p className="capitalize">{name}</p>
           <p className="text-[#513BEE] text-sm font-light">
             {formattedPrice(price)}
           </p>

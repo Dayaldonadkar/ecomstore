@@ -9,6 +9,7 @@ const initialState = {
   filter_products: [],
   all_products: [],
   sorting_value: "",
+  gridView: true,
 };
 const FilterContextProvider = ({ children }) => {
   const { products } = useGlobalContext();
@@ -16,8 +17,15 @@ const FilterContextProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(FilterR, initialState);
 
+  const setGridView = () => {
+    dispatch({ type: "SET_GRID_VIEW" });
+  };
+
+  const setListView = () => {
+    dispatch({ type: "SET_LIST_VIEW" });
+  };
   const sorting = () => {
-    dispatch({ type: "GET_SORT_VALUE" });
+    return dispatch({ type: "GET_SORT_VALUE" });
   };
 
   useEffect(() => {
@@ -30,7 +38,9 @@ const FilterContextProvider = ({ children }) => {
   }, [products]);
 
   return (
-    <FilterContext.Provider value={{ ...state, sorting }}>
+    <FilterContext.Provider
+      value={{ ...state, setGridView, sorting, setListView }}
+    >
       {children}
     </FilterContext.Provider>
   );

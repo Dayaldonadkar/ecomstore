@@ -2,8 +2,7 @@ import React, { useContext, useState } from "react";
 import FirstPart from "../Components/FirstPart";
 import SecondPart from "../Components/SecondPart";
 import { Slider } from "@material-tailwind/react";
-import GridViewIcon from "@mui/icons-material/GridView";
-import ViewListIcon from "@mui/icons-material/ViewList";
+
 import Card from "../Components/Card";
 import { useGlobalContext } from "../context/Context";
 import { Link } from "react-router-dom";
@@ -13,6 +12,7 @@ import {
   FilterContextProvider,
   useFilterContext,
 } from "../context/FilterContext";
+import Sort from "../Components/Sort";
 
 const Products = () => {
   const { products } = useGlobalContext();
@@ -73,58 +73,7 @@ const Products = () => {
             Clear Filters
           </button>
         </div>
-        <div className="my-5 sm:my-8">
-          <div className="flex justify-between">
-            <div className="flex">
-              <div onClick={() => setGrid(true)}>
-                <GridViewIcon />
-              </div>
-              <div onClick={() => setGrid(false)}>
-                <ViewListIcon />
-              </div>
-            </div>
-            <p className="font-light">{products.length} Products Available</p>
-            <div className="text-sm font-light ">
-              <form action="#">
-                <label htmlFor="sort">
-                  <select name="sort" id="sort" onClick={sorting}>
-                    <option value="lowest">lowest</option>
-                    <option value="highest">highest</option>
-                    <option value="a-z">Price(a-z)</option>
-                    <option value="z-a">Price(z-a)</option>
-                  </select>
-                </label>
-              </form>
-            </div>
-          </div>
-          {grid && (
-            <div className="py-5 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4">
-              {products.map((currElem) => {
-                const { id } = currElem;
-                return (
-                  <div className="py-2">
-                    <Link to={`/singlepage/${id}`}>
-                      <Card {...currElem} />
-                    </Link>
-                  </div>
-                );
-              })}
-            </div>
-          )}
-
-          {!grid && (
-            <div className="py-5">
-              {products.map((currElem) => {
-                const { id } = currElem;
-                return (
-                  <div className="py-2">
-                    <ListView {...currElem} id={id} />
-                  </div>
-                );
-              })}
-            </div>
-          )}
-        </div>
+        <Sort />
       </div>
     </div>
   );

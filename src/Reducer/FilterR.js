@@ -8,6 +8,20 @@ const filterR = (state, action) => {
         filter_products: [...action.payload],
       };
 
+    case "SET_GRID_VIEW": {
+      return {
+        ...state,
+        gridView: true,
+      };
+    }
+
+    case "SET_LIST_VIEW": {
+      return {
+        ...state,
+        gridView: false,
+      };
+    }
+
     case "GET_SORT_VALUE": {
       let userSortValue = document.getElementById("sort");
       //   console.log(userSortValue, "userSort");
