@@ -32,7 +32,9 @@ const Sort = () => {
               <label onChange={sorting} htmlFor="sort">
                 <select name="sort" id="sort" className="">
                   <option value="lowest">Price(lowest)</option>
-                  <option value="#" disabled></option>
+                  <option value="#" selected disabled>
+                    Select
+                  </option>
                   <option value="highest">Price(highest)</option>
                   <option value="#" disabled></option>
                   <option value="a-z">Price(a-z)</option>

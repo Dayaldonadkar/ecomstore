@@ -38,6 +38,19 @@ const filterR = (state, action) => {
       let newSortData;
       let tempSortData = [...action.payload];
 
+      if (state.sorting_value === "lowest") {
+        const sortingPro = (a, b) => {
+          return a.price - b.price;
+        };
+        newSortData = tempSortData.sort(sortingPro);
+      }
+      if (state.sorting_value === "highest") {
+        const sortingPro = (a, b) => {
+          return b.price - a.price;
+        };
+        newSortData = tempSortData.sort(sortingPro);
+      }
+
       if (state.sorting_value === "a-z") {
         newSortData = tempSortData.sort((a, b) => {
           return a.name.localeCompare(b.name);
@@ -49,6 +62,13 @@ const filterR = (state, action) => {
           return b.name.localeCompare(a.name);
         });
       }
+
+      // if (state.sorting_value === "lowest") {
+      //   const sortingProducts = tempSortData.sort((a, b) => {
+      //     return a.price - b.price;
+      //   });
+      //   newSortData = tempSortData.sort(sortingProducts);
+      // }
 
       return {
         ...state,
