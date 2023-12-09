@@ -1,19 +1,14 @@
 import React from "react";
 import { Slider } from "@material-tailwind/react";
 import Sort from "../Components/Sort";
+import Search from "../Components/Search";
 
 const Products = () => {
   return (
     <div className="flex justify-center ">
       <div className="w-[90%] sm:flex">
         <div className="my-8">
-          <div className="">
-            <input
-              type="text"
-              placeholder="SEARCH PRODUCT"
-              className="border border-[#182B3A] placeholder:pl-2 placeholder:text-sm py-1 w-[70%] rounded-md"
-            />
-          </div>
+          <Search />
 
           <div className="my-7">
             <h1 className="text-lg">Category</h1>
