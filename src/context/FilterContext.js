@@ -12,6 +12,8 @@ const initialState = {
   gridView: true,
   filter: {
     text: "",
+    category: "all",
+    company: "all",
   },
 };
 

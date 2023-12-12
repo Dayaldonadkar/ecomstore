@@ -90,6 +90,12 @@ const filterR = (state, action) => {
         });
       }
 
+      if (category) {
+        tempFilterProduct = tempFilterProduct.filter((currElem) => {
+          return currElem.category === category;
+        });
+      }
+
       return {
         ...state,
         filter_products: tempFilterProduct,

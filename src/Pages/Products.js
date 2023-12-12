@@ -10,34 +10,6 @@ const Products = () => {
         <div className="my-8">
           <Search />
 
-          <div className="my-7">
-            <h1 className="text-lg">Category</h1>
-            <ul className="text-sm font-light py-2 space-y-2">
-              <li>All</li>
-              <li>Mobile</li>
-              <li>Laptop</li>
-              <li>Computer</li>
-              <li>Accesories</li>
-              <li>Watch</li>
-            </ul>
-          </div>
-
-          <div>
-            <h1 className="text-lg">Company</h1>
-            <div className="w-10">
-              <select label="Select Version">
-                <option>All</option>
-                <option>Apple</option>
-                <option>Samsung</option>
-                <option>Dell</option>
-                <option>Nokia</option>
-                <option>Asus</option>
-                <option>Lenovo</option>
-                <option>Rolex</option>
-              </select>
-            </div>
-          </div>
-
           <div className="pt-5">
             <div className="w-[10%]">
               <h1 className="pb-3">Price</h1>
