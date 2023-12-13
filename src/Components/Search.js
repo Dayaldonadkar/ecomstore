@@ -7,7 +7,7 @@ const Search = () => {
     all_products,
     updateFilterValue,
   } = useFilterContext();
-  console.log(text, "text");
+  // console.log(text, "text");
 
   const getUniqueData = (data, property) => {
     let newVal = data.map((currELem) => {
@@ -20,6 +20,8 @@ const Search = () => {
   };
 
   const categoryOnlyData = getUniqueData(all_products, "category");
+  const companyData = getUniqueData(all_products, "company");
+  console.log(companyData);
 
   return (
     <div>
@@ -39,8 +41,9 @@ const Search = () => {
         <ul className="text-sm font-light py-2 space-y-2"> </ul>
         {categoryOnlyData.map((currELem, index) => {
           return (
-            <div>
+            <div className="capitalize">
               <button
+                className="capitalize"
                 type="button"
                 name="category"
                 onClick={updateFilterValue}
@@ -56,15 +59,15 @@ const Search = () => {
       <div>
         <h1 className="text-lg">Company</h1>
         <div className="w-10">
-          <select label="Select Version">
-            <option>All</option>
-            <option>Apple</option>
-            <option>Samsung</option>
-            <option>Dell</option>
-            <option>Nokia</option>
-            <option>Asus</option>
-            <option>Lenovo</option>
-            <option>Rolex</option>
+          <select
+            label="Select Version"
+            name="company"
+            id="company"
+            onChange={updateFilterValue}
+          >
+            {companyData.map((currELem) => {
+              return <option value={currELem}>{currELem}</option>;
+            })}
           </select>
         </div>
       </div>

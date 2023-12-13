@@ -27,7 +27,7 @@ const filterR = (state, action) => {
       let userSortValue = document.getElementById("sort");
       //   console.log(userSortValue, "userSort");
       let sort_value = userSortValue.options[userSortValue.selectedIndex].value;
-      console.log(sort_value, "sortvalue");
+      // console.log(sort_value, "sortvalue");
 
       return {
         ...state,
@@ -69,7 +69,7 @@ const filterR = (state, action) => {
 
     case "UPDATE_FILTERS_VALUE":
       const { name, value } = action.payload;
-      console.log("reducername", value);
+      // console.log("reducername", value);
       return {
         ...state,
         filter: {
@@ -93,6 +93,12 @@ const filterR = (state, action) => {
       if (category) {
         tempFilterProduct = tempFilterProduct.filter((currElem) => {
           return currElem.category === category;
+        });
+      }
+
+      if (company) {
+        tempFilterProduct = tempFilterProduct.filter((currElem) => {
+          return currElem.company === company;
         });
       }
 
