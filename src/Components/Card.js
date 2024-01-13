@@ -5,7 +5,7 @@ const Card = ({ name, price, image }) => {
   const { formattedPrice } = useGlobalContext();
 
   return (
-    <div className="bg-white px-5 sm:px-3 pt-5 sm:pt-3 pb-2 sm:pb-1 rounded-lg mx-2">
+    <div className="bg-white px-5 sm:px-3 pt-5 sm:pt-3 pb-2 sm:pb-1 rounded-lg mx-2 cursor-pointer hover:scale-105 transition duration-150">
       <img className="" src={image} alt="" />
       <div className="flex justify-between pt-2">
         <p>{name}</p>

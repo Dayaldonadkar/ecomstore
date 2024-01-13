@@ -14,7 +14,7 @@ const Sort = () => {
 
   return (
     <div>
-      <div className="my-5 sm:my-8">
+      <div className="my-5 sm:my-8 xl:w-[95%]">
         <div className="flex justify-between">
           <div className="flex">
             <div onClick={setGridView}>
@@ -46,7 +46,7 @@ const Sort = () => {
           </div>
         </div>
         {gridView && (
-          <div className="py-5 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4">
+          <div className="py-5 sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3">
             {filter_products.map((currElem) => {
               const { id } = currElem;
               return (

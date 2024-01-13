@@ -6,7 +6,7 @@ import Search from "../Components/Search";
 const Products = () => {
   return (
     <div className="flex justify-center ">
-      <div className="w-[90%] sm:flex">
+      <div className="w-[90%] xl:w-[80%] sm:flex">
         <div className="my-8">
           <Search />
 

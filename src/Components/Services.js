@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import { useGlobalContext } from "../context/Context";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const { featureProducts } = useGlobalContext();
@@ -12,9 +13,14 @@ const Services = () => {
           Our Feature Services
         </h1>
 
-        <div className="space-y-8 sm:space-y-0 sm:grid sm:grid-cols-3">
+        <div className="space-y-8 sm:space-y-0 sm:grid sm:grid-cols-3 md:gap-x-10">
           {featureProducts.map((currElem) => {
-            return <Card {...currElem} />;
+            const { id } = currElem;
+            return (
+              <Link to={`/singlepage/${id}`}>
+                <Card {...currElem} />
+              </Link>
+            );
           })}
         </div>
       </div>

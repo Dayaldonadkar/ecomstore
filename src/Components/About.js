@@ -1,5 +1,6 @@
 import React from "react";
 import family from "../React App_files/hero.jpg";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -19,9 +20,11 @@ const About = () => {
             atque temporibus veniam doloribus libero ad error omnis voluptates
             animi! Suscipit sapient
           </p>
-          <button className="text-white px-3 xl:px-5 py-2 xl:py-3 bg-[#6254F3] shadow-lg rounded-md xl:text-lg">
-            Shop Now
-          </button>
+          <Link to="/products">
+            <button className="text-white px-3 xl:px-5 py-2 xl:py-3 bg-[#6254F3] shadow-lg rounded-md xl:text-lg">
+              Shop Now
+            </button>
+          </Link>
         </div>
         <div className="my-10 md:w-[70%] flex justify-center items-center relative">
           <img className="md:w-[70%] z-10" src={family} alt="" />
